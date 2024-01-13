@@ -1,19 +1,22 @@
 // Get day number
 
+// day.js is refactored, Test day.js: Passed: 5 of 5
+
 'use strict';
 
-const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const daysOfWeek = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 const parseDay = (inputString) => {
-  let dayNumber;
+  let dayNumber = -1;
 
-  for (dayNumber = 0; dayNumber < daysOfWeek.length; dayNumber++) {
-    if (inputString.startsWith(daysOfWeek[dayNumber].toLowerCase())) {
-      return dayNumber + 1;
+  for (const day of daysOfWeek) {
+    if (inputString.startsWith(day)) {
+      dayNumber = daysOfWeek.indexOf(day) + 1;
+      break;
     }
   }
 
-  return -1;
+  return dayNumber;
 };
 
 module.exports = parseDay;
