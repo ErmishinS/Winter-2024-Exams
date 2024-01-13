@@ -1,19 +1,19 @@
 // Find an intersection of two dictionaries
 
+// intersection.js is refactored, Test intersection.js: Passed: 5 of 5
+
 'use strict';
 
 const intersection = (object1, object2) => {
-  const firstKeys = Object.keys(object1);
+  const result = {};
 
-  for (const attributeName of firstKeys) {
+  for (const attributeName of Object.keys(object1)) {
     if (object1[attributeName] === object2[attributeName]) {
-      object2[attributeName] = object1[attributeName];
-    } else {
-      delete object1[attributeName];
+      result[attributeName] = object1[attributeName];
     }
   }
 
-  return object1;
+  return result;
 };
 
 module.exports = intersection;
