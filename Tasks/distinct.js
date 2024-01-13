@@ -2,20 +2,20 @@
 
 'use strict';
 
-const DISTINCT = (data) => {
-  const A = new Set();
-  let w = 0;
+const distinct = (arr) => {
+  const uniqueSet = new Set();
+  
+  for (let currentIndex = 0; currentIndex < arr.length; currentIndex++) {
+    const currentValue = arr[currentIndex];
 
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
+    if (uniqueSet.has(currentValue)) {
+      delete arr[currentIndex];
     } else {
-      A.add(a);
+      uniqueSet.add(currentValue);
     }
-    w++;
-  });
+  }
 
-  return data.filter(x => typeof x === 'number');
+  return arr.filter(element => typeof element === 'number');
 };
 
-module.exports = DISTINCT;
+module.exports = distinct;
