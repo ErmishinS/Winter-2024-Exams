@@ -7,18 +7,18 @@ const getValueBetween = (text, prefix, suffix) => {
 
   if (startIndex === -1) {
     return '';
-  } else {
-    let offset = startIndex + prefix.length;
-    text = text.substring(offset);
+  }
 
-    if (suffix) {
-      startIndex = text.indexOf(suffix);
+  let offset = startIndex + prefix.length;
+  text = text.substring(offset);
 
-      if (startIndex === -1) {
-        return '';
-      } else {
-        text = text.substring(0, startIndex);
-      }
+  if (suffix) {
+    startIndex = text.indexOf(suffix);
+
+    if (startIndex === -1) {
+      return '';
+    } else {
+      text = text.substring(0, startIndex);
     }
   }
 
