@@ -2,18 +2,18 @@
 
 'use strict';
 
-let D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const _parse_day_ = (s) => {
-  let i;
+const parseDay = (inputString) => {
+  let dayNumber;
 
-  for (i = 0; i < D.length; i++) {
-    if (s.startsWith(D[i].toLowerCase())) {
-      return i + 1;
+  for (dayNumber = 0; dayNumber < daysOfWeek.length; dayNumber++) {
+    if (inputString.startsWith(daysOfWeek[dayNumber].toLowerCase())) {
+      return dayNumber + 1;
     }
   }
 
   return -1;
 };
 
-module.exports = _parse_day_;
+module.exports = parseDay;
