@@ -1,5 +1,7 @@
 // Extract substring between prefix and suffix
 
+// between.js is refactored, Test between.js: Passed: 3 of 3
+
 'use strict';
 
 const getValueBetween = (str, prefix, suffix) => {
@@ -9,14 +11,9 @@ const getValueBetween = (str, prefix, suffix) => {
     return '';
   }
 
-  const result = str.substring(startIndex + prefix.length);
+  const substring = str.substring(startIndex + prefix.length);
 
-  if (suffix) {
-    const endIndex = result.indexOf(suffix);
-    return endIndex !== -1 ? result.substring(0, endIndex) : '';
-  }
-
-  return result;
+  return suffix ? substring.substring(0, substring.indexOf(suffix)) : substring;
 };
 
 module.exports = getValueBetween;
