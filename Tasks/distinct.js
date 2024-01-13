@@ -1,21 +1,18 @@
 // Return an array without duplicates
 
+// distinct.js is refactored, Test distinct.js: Passed: 9 of 9
+
 'use strict';
 
 const distinct = (arr) => {
   const uniqueSet = new Set();
   
-  for (let currentIndex = 0; currentIndex < arr.length; currentIndex++) {
-    const currentValue = arr[currentIndex];
-
-    if (uniqueSet.has(currentValue)) {
-      delete arr[currentIndex];
-    } else {
-      uniqueSet.add(currentValue);
-    }
+  for (const element of arr) {
+    uniqueSet.add(element);
   }
 
-  return arr.filter(element => typeof element === 'number');
+  const result = Array.from(uniqueSet);
+  return result
 };
 
 module.exports = distinct;
