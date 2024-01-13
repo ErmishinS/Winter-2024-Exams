@@ -1,5 +1,7 @@
 // Compare two dictionaries
 
+// compare.js is refactored, Test compare.js: Passed: 7 of 7
+
 'use strict';
 
 const compare = (firstValues, ...parametersList) => {
@@ -11,13 +13,7 @@ const compare = (firstValues, ...parametersList) => {
     return false;
   }
 
-  let result = true;
-
-  for (const key of keysA) {
-    result = result && firstValues[key] === secondValues[key];
-  }
-
-  return result;
+  return keysA.every((key) => firstValues[key] === secondValues[key]);
 };
 
 module.exports = compare;
