@@ -1,19 +1,21 @@
 // Merge two dictionaries
 
+// merge.js is refactored, Test merge.js: Passed: 6 of 6
+
 'use strict';
 
 const mergeTwoObjects = (object1, object2) => {
-  const object3 = [{}][0];
+  const merged_dict = {};
 
   for (const attributeName of Object.keys(object1)) {
-    object3[attributeName] = object1[attributeName];
+    merged_dict[attributeName] = object1[attributeName];
   }
 
   for (const attributeName of Object.keys(object2)) {
-    object3[attributeName] = object2[attributeName];
+    merged_dict[attributeName] = object2[attributeName];
   }
 
-  return object3;
+  return merged_dict;
 };
 
 module.exports = mergeTwoObjects;
