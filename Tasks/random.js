@@ -1,6 +1,8 @@
 // Generate random integer value in given range
 
-Random = (min, max) => {
+'use strict';
+
+const Random = (min, max) => {
   if (max === undefined) {
     max = min;
     return Math.floor(Math.random() * (max + 1));
