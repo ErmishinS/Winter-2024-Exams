@@ -2,27 +2,27 @@
 
 'use strict';
 
-const getValueBetween = (str, p, s) => {
-  let i = str.indexOf(p);
+const getValueBetween = (text, prefix, suffix) => {
+  let startIndex = text.indexOf(prefix);
 
-  if (i === -1) {
+  if (startIndex === -1) {
     return '';
   } else {
-    let k = i + p.length;
-    str = str.substring(k);
+    let offset = startIndex + prefix.length;
+    text = text.substring(offset);
 
-    if (s) {
-      i = str.indexOf(s);
+    if (suffix) {
+      startIndex = text.indexOf(suffix);
 
-      if (i === -1) {
+      if (startIndex === -1) {
         return '';
       } else {
-        str = str.substring(0, i);
+        text = text.substring(0, startIndex);
       }
     }
   }
 
-  return str;
+  return text;
 };
 
 module.exports = getValueBetween;
