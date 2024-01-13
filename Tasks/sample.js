@@ -2,10 +2,10 @@
 
 'use strict';
 
-const SAMPLE = (arr) => {
+const getRandomElement = (arr) => {
   arr = arr[Math.floor(Math.random() * arr.length)];
   
   return arr;
 };
 
-module.exports = SAMPLE;
+module.exports = getRandomElement;
