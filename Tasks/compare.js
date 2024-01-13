@@ -2,22 +2,22 @@
 
 'use strict';
 
-const compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  let a = Object.keys(first_values);
-  let b = Object.keys(second_values);
+const compare = (firstValues, ...parametersList) => {
+  const secondValues = parametersList[0];
+  const keysA = Object.keys(firstValues);
+  const keysB = Object.keys(secondValues);
 
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-
-  for (c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
-    else {
-      e = e && false;
-    }
+  if (keysA.join('-') !== keysB.join('-')) {
+    return false;
   }
-  
-  return e;
+
+  let result = true;
+
+  for (const key of keysA) {
+    result = result && firstValues[key] === secondValues[key];
+  }
+
+  return result;
 };
 
 module.exports = compare;
