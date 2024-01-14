@@ -11,7 +11,8 @@ const getValueBetween = (str, prefix, suffix) => {
     return '';
   }
 
-  const substring = str.substring(startIndex + prefix.length);
+  const position = startIndex + prefix.length;
+  const substring = str.substring(position);
 
   return suffix ? substring.substring(0, substring.indexOf(suffix)) : substring;
 };

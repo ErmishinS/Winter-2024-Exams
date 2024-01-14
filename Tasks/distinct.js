@@ -5,13 +5,9 @@
 'use strict';
 
 const distinct = (arr) => {
-  const uniqueSet = new Set();
-  
-  for (const element of arr) {
-    uniqueSet.add(element);
-  }
-
+  const uniqueSet = new Set(arr);
   const result = Array.from(uniqueSet);
+  
   return result
 };
 

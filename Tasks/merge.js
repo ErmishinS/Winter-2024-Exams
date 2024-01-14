@@ -5,17 +5,17 @@
 'use strict';
 
 const mergeTwoObjects = (object1, object2) => {
-  const merged_dict = {};
+  const mergedDict = {};
 
   for (const attributeName of Object.keys(object1)) {
-    merged_dict[attributeName] = object1[attributeName];
+    mergedDict[attributeName] = object1[attributeName];
   }
 
   for (const attributeName of Object.keys(object2)) {
-    merged_dict[attributeName] = object2[attributeName];
+    mergedDict[attributeName] = object2[attributeName];
   }
 
-  return merged_dict;
+  return mergedDict;
 };
 
 module.exports = mergeTwoObjects;
